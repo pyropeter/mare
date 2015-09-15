@@ -481,7 +481,7 @@ bool CMake::generateProject(Project& project)
       for(const List<String>::Node* i = config.cppCompiler.getFirst(); i; i = i->getNext())
       {
         const String& word = i->data;
-        unsigned int sep;
+        size_t sep;
         if(word.find('=', sep))
           fileWrite(String("set(ENV{") + word.substr(0, sep) +  "} \"" + word.substr(sep + 1) + "\")\n");
         else
@@ -505,7 +505,7 @@ bool CMake::generateProject(Project& project)
       for(const List<String>::Node* i = config.cCompiler.getFirst(); i; i = i->getNext())
       {
         const String& word = i->data;
-        unsigned int sep;
+        size_t sep;
         if(word.find('=', sep))
           fileWrite(String("set(ENV{") + word.substr(0, sep) +  "} \"" + word.substr(sep + 1) + "\")\n");
         else
